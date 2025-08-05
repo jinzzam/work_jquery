@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            // 제이쿼리 스타일을 변수로 처리
+
+            // $(".txt1").css({ "border": "2px dashed #00f" });
+            // 가장 가까운 div 요소를 선택
+            // $(".txt1").closest("div").css({ "border": "2px dashed #00f" });
+            // $(".txt1").parents().css({ "border": "2px dashed #00f" });
+            // $(".txt1").parents("div").css({ "border": "2px dashed #00f" });
+            // $(".txt1").parents("body").css({ "border": "2px dashed #00f" });
+            $(".txt1").parents("html").css({ "border": "2px dashed #00f" });
+        });
+    </script>
+</head>
+
+<body>
+    <h1 class="title">선택자</h1>
+    <div>
+        <div>
+            <p class="txt1">내용</p>
+        </div>
+    </div>
+</body>
+
+</html>

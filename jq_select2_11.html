@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            //div 는 글자색 적용이 안 된다.
+            // $("#wrap").css({"color" : "red"});
+            //a 요소 4개 적용
+            // $("#wrap a").css({"color" : "red"});
+            //a 요소면서 target 속성이 있는 것
+            $("#wrap a[target]").css({"color" : "red"});
+            //href 속성에서 https로 시작하는 것
+            $("#wrap a[href^=https]").css({"color" : "#0f0"});
+            //net으로 끝나는 것
+            $("#wrap a[href$=net]").css({"color" : "yellow"});
+            //google을 포함하는 것
+            $("#wrap a[href*=google]").css({"color" : "brown"});
+            $("#member_f : text").css({"background-color" : "#ff0"});
+            $("#member_f : password").css({"background-color" : "#0ff"});
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <p><a href="http://easyspub.co.kr" target="_blank">easyspub</a></p>
+        <p><a href="https://naver.com">naver</a></p>
+        <p><a href="http://google.com">google</a></p>
+        <p><a href="http://daum.net">daum</a></p>
+    </div>
+
+    <!-- get 방식으로 이동하는 곳은 없음 -->
+    <form method="get" action="#" id="member_f">
+        <p>
+            <!-- name : 서버로 넘기는 이름 -->
+            <label for="user_id">아이디</label>
+            <input type="text" name="user_id" id="user_id">
+        </p>
+        <p>
+            <label for="user_pw">비밀번호</label>
+            <input type="password" name="user_pw" id="user_pw">
+        </p>
+    </form>
+</body>
+
+</html>

@@ -8,16 +8,20 @@
     <script src="js/jquery.js"></script>
     <script>
         $(function () {
-            // .css().css() ... => 2개 이상 스타일 적용 가능
-            $("#tit").css("background-color", "#ff0").css("border", "2px solid #f00");
+            $("#menu li:lt(2)").css({"background-color" : "#0ff"});
+            $("#menu li:gt(2)").css({"background-color" : "#f0f"});
         });
     </script>
 </head>
 
 <body>
-    <h1>제이쿼리</h1>
-    <h2 id="tit">선택자</h2>
-    <h3>직접 선택자</h3>
+    <h1 >탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용</li>
+        <li>내용</li>
+        <li>내용</li>
+        <li>내용</li>
+    </ul>
 </body>
 
 </html>
