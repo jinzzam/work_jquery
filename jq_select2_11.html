@@ -13,22 +13,22 @@
             //a 요소 4개 적용
             // $("#wrap a").css({"color" : "red"});
             //a 요소면서 target 속성이 있는 것
-            $("#wrap a[target]").css({"color" : "red"});
+            // $("#wrap a[target]").css({"color" : "red"});
             //href 속성에서 https로 시작하는 것
             $("#wrap a[href^=https]").css({"color" : "#0f0"});
             //net으로 끝나는 것
             $("#wrap a[href$=net]").css({"color" : "yellow"});
             //google을 포함하는 것
             $("#wrap a[href*=google]").css({"color" : "brown"});
-            $("#member_f : text").css({"background-color" : "#ff0"});
-            $("#member_f : password").css({"background-color" : "#0ff"});
+            $("#member_f :text").css({"background-color" : "#ff0"});
+            $("#member_f :password").css({"background-color" : "#0ff"});
         });
     </script>
 </head>
 
 <body>
     <div id="wrap">
-        <p><a href="http://easyspub.co.kr" target="_blank">easyspub</a></p>
+        <p><a href="http://easyspub.co.kr" target="_self">easyspub</a></p>
         <p><a href="https://naver.com">naver</a></p>
         <p><a href="http://google.com">google</a></p>
         <p><a href="http://daum.net">daum</a></p>
