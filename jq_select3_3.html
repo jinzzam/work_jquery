@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aqua {background-color:  #0ff;}
+        .red {background-color:  #f00;}
+        .green {background-color:  #0f0;}
+        .yellow {background-color:  #ff0;}
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            // addClass : class 추가
+            $("#p1").addClass("aqua");
+            // removeClass : class 제거
+            $("#p2").removeClass("red");
+            // toggleClass : class 없으면 추가
+            $("#p3").toggleClass("green");
+            // toggleClass : class 있으면 제거
+            $("#p4").toggleClass("green");
+            // hasClass : 해당 클래스가 있으면 참(text에 내용으로 출력)
+            // $("#p6").text($("#p5").hasClass("yellow"));
+            $("#p6").text($("#p5").hasClass("yellow2"));
+            
+        });
+    </script>
+</head>
+
+<body>
+   <p id="p1">내용1</p>
+   <p id="p2" class="red">내용2</p>
+   <p id="p3">내용3</p>
+   <p id="p4" class="green">내용4</p>
+   <p id="p5" class="yellow">내용5</p>
+   <p id="p6">내용6</p>
+</body>
+
+</html>
