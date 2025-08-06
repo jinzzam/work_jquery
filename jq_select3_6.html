@@ -20,19 +20,19 @@
         $(function () {
             // height : 50px
             var w1 = $("#p1").height();
-            console.log(w1);
+            console.log("@# height => "+w1);
 
             //90 (50+20+20)=>패딩까지
             var w2 = $("#p1").innerHeight();
-            console.log(w2);
+            console.log("@# innerHeight => "+w2);
 
             //100 (50+20+20+5+5)=>테두리까지
             var w3 = $("#p1").outerHeight();
-            console.log(w3);
+            console.log("@# outerHeight=> " + w3);
 
             //150 (100+20+20+5+5)=>테두리까지
             var w4 = $("#p1").outerWidth();
-            console.log(w4);
+            console.log("@# outerWidth=> " + w4);
 
             //outerWidth : 150 -> 100 변경
             $("#p2").outerWidth(100).outerHeight(100);
