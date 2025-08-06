@@ -11,10 +11,14 @@
             // var copyObj = $(".box1");   //div.box1
             // var copyObj = $(".box1").children();    //0:p, 1:p
             var copyObj = $(".box1").children().clone();    //0:p, 1:p 복제한 것
-            console.log(copyObj);
+            console.log("@# copyObj => " + copyObj);
 
             // 해당 요소 삭제
             $(".box2").remove();
+            // 해당 요소의 하위 요소들(자식들) 삭제
+            $(".box3").empty();
+            // 복제된 내용1, 2번이 뒤에 추가
+            $(".box3").append(copyObj);
         });
     </script>
 </head>
