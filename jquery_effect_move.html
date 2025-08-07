@@ -7,39 +7,51 @@
     <script src="js/jquery.js"></script>
     <title>Document</title>
     <style>
-        * {
-            margin:0;
-        }
-        .txt1, .txt2{
-            width: 50px;
-            text-align: center;
-            background-color: aqua;
-        }
+        * {margin: 0;padding: 0;}
 
-        .txt2{
-            background-color: orange;
-        }
+        body{ padding: 20px;}
+        .btnWrap{margin-bottom: 10px;}
+        .wrap{max-width: 600px; border: 1px solid #000;}
+        .txt1{width: 10%; text-align: center; background-color: aqua;}
     </style>
     <script>
         $(function () {
-            //큐에 저장된 순서대로 애니메이션 실행
-            $(".txt1").animate({marginLeft : "100px"}, 1000)
-                        .animate({marginLeft : "300px"}, 1000)
-                        .animate({marginLeft : "400px"}, 1000);
-            
-            $(".txt2").animate({marginLeft : "100px"}, 1000)
-                        .animate({marginLeft : "300px"}, 1000)
-                        .animate({marginLeft : "400px"}, 1000);
-            // clearQueue : 첫번째 애니메이션 제외하고 나머지 제거
-            $(".txt2").clearQueue();
+            var txt1 = $(".txt1");
+            var count=1;
+
+            $(".btnWrap button").on("click", function(){
+                // txt1.animate({marginLeft:"+=10%"});
+                //내용1이 애니메이션 중이면 작동 안됨
+                if(!txt1.is(":animated")){
+                    if($(this).hasClass("backBtn")){
+                        count--;
+                        if(count < 1){
+                            count = 1;
+                            return;
+                        }
+                        txt1.animate({marginLeft:"-=10%"});
+                    }else{
+                        count++;
+                        if(count > 10){
+                            count = 10;
+                            return;
+                        }
+                        txt1.animate({marginLeft:"+=10%"});
+                    }
+                }
+            });
         });
     </script>
 </head>
 
 <body>
-   <p class="txt1">내용1</p>
-   <p class="txt2">내용2</p>
-
+    <p class="btnWrap">
+        <button class="backBtn">Back</button>
+        <button class="goBtn">Go</button>
+    </p>
+    <div class="wrap">
+        <p class="txt1">내용1</p>
+    </div>
 </body>
 
 </html>
