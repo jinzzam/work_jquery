@@ -8,27 +8,50 @@
     <title>Document</title>
     <script>
         $(function () {
-            // 마우스 이동 시 발생하는 이벤트
-            $(document).on("mousemove", function(e){
-                // alert("move@");
-                // 각 좌표값을 출력
-                $(".posX").text(e.pageX);
-                $(".posY").text(e.pageY);
+            // focus, blur : 하위 요소 선택 시 이벤트 발생하지 않음
+            // $("#frm_1").on("focus", function(e){
+            // focus 키보드 이벤트지만, 마우스로 찍어도 이벤트 발생됨.
+            $("#user_id_1, #user_pw_1").on("focus", function () {
+                $(this).css({ "background-color": "pink" });
+            });
+            $("#user_id_1, #user_pw_1").on("blur", function () {
+                $(this).css({ "background-color": "#fff" });
+            });
+
+            // focusin, focusout : 하위 요소 선택 시 이벤트 발생
+            $("#frm_2").on("focusin", function (e) {
+                $(this).css({ "background-color": "pink" });
+            });
+            $("#frm_2").on("focusout", function (e) {
+                $(this).css({ "background-color": "#fff" });
             });
         });
     </script>
 </head>
 
 <body>
-    <h1>mousemove</h1>
-    <p>
-        X:<span class="posX">0</span>
-        px
-    </p>
-    <p>
-        Y:<span class="posY">0</span>
-        px
-    </p>
+    <h1>focus / blur</h1>
+    <form action="#" , id="frm_1">
+        <p>
+            <label for="user_id_1">ID</label>
+            <input type="text" name="user_id_1" id="user_id_1">
+        </p>
+        <p>
+            <label for="user_pw_1">PW</label>
+            <input type="password" name="user_pw_1" id="user_pw_1">
+        </p>
+    </form>
+    <h1>focusin / focusout</h1>
+    <form action="#" , id="frm_2">
+        <p>
+            <label for="user_id_2">ID</label>
+            <input type="text" name="user_id_2" id="user_id_2">
+        </p>
+        <p>
+            <label for="user_pw_2">PW</label>
+            <input type="password" name="user_pw_2" id="user_pw_2">
+        </p>
+    </form>
 </body>
 
 </html>
